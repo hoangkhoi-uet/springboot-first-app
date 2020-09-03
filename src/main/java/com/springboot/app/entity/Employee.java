@@ -1,19 +1,41 @@
 package com.springboot.app.entity;
 
-public class Employee {
-    private int employeeId;
-    private String firstName;
-    private String lastName;
-    private int salary;
-    private String department;
-    private int managerId;
+import javax.persistence.*;
 
-    public int getEmployeeId() {
-        return employeeId;
+@Entity
+@Table(name = "employee")
+
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+//    private int salary;
+//    private String department;
+//    private int managerId;
+
+    public Employee() {
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public Employee(Long id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirst_name() {
@@ -32,28 +54,28 @@ public class Employee {
         this.lastName = last_name;
     }
 
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
-    public int getManagerId() {
-        return managerId;
-    }
-
-    public void setManagerId(int managerId) {
-        this.managerId = managerId;
-    }
+//    public int getSalary() {
+//        return salary;
+//    }
+//
+//    public void setSalary(int salary) {
+//        this.salary = salary;
+//    }
+//
+//    public String getDepartment() {
+//        return department;
+//    }
+//
+//    public void setDepartment(String department) {
+//        this.department = department;
+//    }
+//
+//    public int getManagerId() {
+//        return managerId;
+//    }
+//
+//    public void setManagerId(int managerId) {
+//        this.managerId = managerId;
+//    }
 
 }
