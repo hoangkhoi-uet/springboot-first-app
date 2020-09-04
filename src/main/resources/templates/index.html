@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Spring Boot File Upload Example</title>
+    <title>Title</title>
 </head>
-
 <body>
-<th:block th:include="/_menu"></th:block>
-
-<h3>Spring Boot File Upload Example</h3>
-
-<ul>
-    <li><a th:href="@{/uploadOneFile}">Upload One File Example</a></li>
-    <li><a th:href="@{/uploadMultiFile}">Upload Multiple Files Example</a></li>
-</ul>
-
+<form method="POST" th:action="@{/upload-xlsx-file}" enctype="multipart/form-data">
+    <div class="form-group mt-3">
+        <label for="file">Select a CSV file</label>
+        <input type="file" name="file" class="form-control-file" id="file" >
+    </div>
+    <button type="submit" class="btn btn-primary">Import Users</button>
+</form>
 </body>
 </html>
