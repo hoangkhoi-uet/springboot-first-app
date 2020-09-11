@@ -1,13 +1,12 @@
 package com.springboot.app;
 
-import com.springboot.app.storage.StorageProperties;
+import com.springboot.app.property.FileStorageProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
-@EnableConfigurationProperties(StorageProperties.class)
-
+@EnableConfigurationProperties({FileStorageProperties.class})
 public class SpringbootFirstAppApplication {
 
 	public static void main(String[] args) {

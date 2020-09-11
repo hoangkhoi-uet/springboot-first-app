@@ -1,44 +1,88 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container py-5">-->
+<!--    <div class="row">-->
+<!--        <div class="col-10 mx-auto">-->
+<!--            <h1>File Upload Status</h1>-->
+<!--            &lt;!&ndash;display error if any&ndash;&gt;-->
+<!--            <div class="alert alert-danger" role="alert" th:if="${!status}">-->
+<!--                <strong>Error:</strong>-->
+<!--                <span th:text="${message}"></span>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash;display users list&ndash;&gt;-->
+<!--            <table class="table table-striped" th:if="${status}">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th scope="col">#</th>-->
+<!--                    <th scope="col">ID</th>-->
+<!--                    <th scope="col">Name</th>-->
+<!--                    <th scope="col">Email</th>-->
+<!--                    <th scope="col">Country</th>-->
+<!--                    <th scope="col">Age</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr th:each="user, i : ${users}">-->
+<!--                    <th scope="row" th:text="${i.index + 1}"></th>-->
+<!--                    <td th:text="${user.id}"></td>-->
+<!--                    <td th:text="${user.firstName}"></td>-->
+<!--                    <td th:text="${user.lastName}"></td>-->
+
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>
 </head>
 <body>
-<div class="container py-5">
-    <div class="row">
-        <div class="col-10 mx-auto">
-            <h1>File Upload Status</h1>
-            <!--display error if any-->
-            <div class="alert alert-danger" role="alert" th:if="${!status}">
-                <strong>Error:</strong>
-                <span th:text="${message}"></span>
-            </div>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1>Manage Employee</h1>
+    <table class="table table-active">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td>
+                <a th:href="@{/employee/edit/{id}(id=${user.id})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/employee/delete/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/add" th:href="@{/employee/add}" class="btn btn-success">Add Employee</a>
+    <a href="/add" th:href="@{/employee/modify}" class="btn btn-success">Modify file</a>
+    <a href="/add" th:href="@{/employee/download}" class="btn btn-success">Download</a>
 
-            <!--display users list-->
-            <table class="table table-striped" th:if="${status}">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">Age</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="user, i : ${users}">
-                    <th scope="row" th:text="${i.index + 1}"></th>
-                    <td th:text="${user.id}"></td>
-                    <td th:text="${user.firstName}"></td>
-                    <td th:text="${user.lastName}"></td>
-
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
 </div>
 </body>
 </html>
