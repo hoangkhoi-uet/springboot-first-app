@@ -53,4 +53,10 @@ public class Employee {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString() {
+        return "id: " + this.id +
+                ", First Name: " + this.firstName +
+                ", Last Name: " + this.lastName;
+    }
 }

@@ -83,3 +83,8 @@ multipleUploadForm.addEventListener('submit', function(event){
     uploadMultipleFiles(files);
     event.preventDefault();
 }, true);
+
+
+function loadFileList() {
+
+}

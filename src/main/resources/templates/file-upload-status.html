@@ -80,9 +80,17 @@
         </tr>
     </table>
     <a href="/add" th:href="@{/employee/add}" class="btn btn-success">Add Employee</a>
-    <a href="/add" th:href="@{/employee/modify}" class="btn btn-success">Modify file</a>
-    <a href="/add" th:href="@{/employee/download}" class="btn btn-success">Download</a>
-
+    <a href="/modify" th:href="@{/employee/modify}" class="btn btn-success">Save to file</a>
+    <a href="/download" th:href="@{/downloadFile/test.xlsx}" class="btn btn-success">Download</a>
+    <a href="/" class="btn btn-success">Home</a>
 </div>
+<!--<div class="container col-6">-->
+<!--    <div class="list-group">-->
+<!--        <ul th:each="user : ${fileList}" class="list-group">-->
+<!--            <li  class="list-group-item"><a th:text="${user}" href="#">Something1</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div class="container col-6">-->
+<!--    <div class="list-group">-->
+<!--        <ul th:each="user : ${fileList}" class="list-group">-->
+<!--            <li  class="list-group-item"><a th:text="${user}" href="#">Something1</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div th:each="user : ${fileList}" >-->
+<!--    <a th:text="${user}" th:href="@{/upload-xlsx-file}">Something1</a>-->
+<!--</div>-->
+<form  th:each="user : ${fileList}" >
+    <button type="submit"><a th:text="${user}" th:href="@{/upload-xlsx-file/{fName}(fName=${user})}">Something1</a></button>
+</form>
+<!--<form method="POST" th:action="@{/upload-xlsx-file}" enctype="multipart/form-data">-->
+<!--    <div class="form-group mt-3">-->
+<!--        <label for="file">Select a CSV file</label>-->
+<!--        <input type="file" name="file" class="form-control-file" id="file" >-->
+<!--    </div>-->
+<!--    <button type="submit" class="btn btn-primary">Import Users</button>-->
+<!--</form>-->
+</body>
+</html>
