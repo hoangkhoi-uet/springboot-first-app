@@ -13,17 +13,17 @@
         <form th:object="${user}" th:action="@{/employee/save}" action="#" method="post">
             <div>
                 <label th:text="ID" th:for="id"></label>
-                <input type="number" th:field="*{id}" class="form-control" placeholder="Name" min="1" required/>
+                <input type="number" th:field="*{id}" class="form-control" placeholder="ID" min="1" required/>
             </div>
             <div style="clear: both; display: block; height: 10px"></div>
             <div>
                 <label  th:for="firstName">First Name</label>
-                <input type="text" th:field="*{firstName}" class="form-control" placeholder="Email"/>
+                <input type="text" th:field="*{firstName}" class="form-control" placeholder="First Name"/>
             </div>
             <div style="clear: both; display: block; height: 10px"></div>
             <div>
-                <label th:text="Phone" th:for="phone"></label>
-                <input type="text" th:field="*{lastName}" class="form-control" placeholder="Phone"/>
+                <label th:for="lastName">Last Name</label>
+                <input type="text" th:field="*{lastName}" class="form-control" placeholder="Last Name"/>
             </div>
             <div style="clear: both; display: block; height: 10px"></div>
             <input type="submit" class="btn btn-success" value="Save"/>

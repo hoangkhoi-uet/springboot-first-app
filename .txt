@@ -1,0 +1,34 @@
+# Spring Boot App
+Web tải lên và đọc dữ liệu từ file excel.
+Các chức năng: 
+- Tải lên file excel
+- Đọc và chỉnh sửa dữ liệu của file
+- Lưu lại và tải file excel xuống
+
+Hướng dẫn cài đặt
+
+Yêu cầu máy đã cài các phần mềm: Java SDK, IntellJ (có thể thay thế), Git, MySQL
+
+Bước 1: Clone project: ```git clone https://github.com/hoangkhoi-uet/springboot-first-app.git```
+
+Bước 2: Đăng nhập và tạo cơ sở dữ liệu, bảng trên MySQL
+
+```
+mysql -u root -p;
+CREATE DATABASE IF NOT EXIST spring_app;
+use spring_app;
+CREATE TABLE employee (
+id INT(10) UNSIGNED,
+first_name VARCHAR(30),
+last_name VARCHAR(30)
+);
+```
+
+Bước 2: Chỉnh sửa đường dẫn
+
+```springboot-first-app\src\main\resources\application.properties```
+
+- Sửa ```spring.datasource.username``` và ```spring.datasource.password``` của cơ sở dữ liệu tương ứng. 
+
+- Sửa ```file.upload-dir``` tương ứng
+
