@@ -5,7 +5,7 @@ Các chức năng:
 - Đọc và chỉnh sửa dữ liệu của file
 - Lưu lại và tải file excel xuống
 
-Hướng dẫn cài đặt
+## Hướng dẫn cài đặt
 
 Yêu cầu máy đã cài các phần mềm: Java SDK, IntellJ (có thể thay thế), Git, MySQL
 
